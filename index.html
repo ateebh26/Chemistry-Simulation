@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/addons/p5.sound.min.js"></script>
+    <title>Chemistry Simulation</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 56px;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        #simulation-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="#">Particle Velocity Simulator!</a>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="simulation-container">
+                    <main></main>
+                    <div>
+                        <input name="temperature" type="range" min="1" max="500" value="50" id="tempSlider">
+                        <label for="tempSlider">Temperature</label>
+                    </div>
+
+                    <div class="form-group" id="dropdownGas">
+                        <label for="gasDropdown">Common Gases and Their Molar Masses:</label>
+                        <select class="form-control" id="gasDropdown">
+                            <option value="2.02">Hydrogen (H₂) - 2.02 g/mol</option>
+                            <option value="4.00">Helium (He) - 4.00 g/mol</option>
+                            <option value="28.02">Nitrogen (N₂) - 28.02 g/mol</option>
+                            <option value="32.00">Oxygen (O₂) - 32.00 g/mol</option>
+                            <option value="38.00">Fluorine (F₂) - 38.00 g/mol</option>
+                            <option value="20.18">Neon (Ne) - 20.18 g/mol</option>
+                            <option value="70.90">Chlorine (Cl₂) - 70.90 g/mol</option>
+                            <option value="39.95">Argon (Ar) - 39.95 g/mol</option>
+                            <option value="83.80">Krypton (Kr) - 83.80 g/mol</option>
+                            <option value="131.29">Xenon (Xe) - 131.29 g/mol</option>
+                            <option value="44.01">Carbon Dioxide (CO₂) - 44.01 g/mol</option>
+                            <option value="16.04">Methane (CH₄) - 16.04 g/mol</option>
+                            <option value="17.03">Ammonia (NH₃) - 17.03 g/mol</option>
+                            <option value="64.07">Sulfur Dioxide (SO₂) - 64.07 g/mol</option>
+                            <option value="44.01">Nitrous Oxide (N₂O) - 44.01 g/mol</option>
+                        </select>
+                    </div>
+
+                    <div id="tempDisplay">
+                        Temperature (K): <span id="temperatureValue"></span> K 
+                        <br>
+                        Temperature (˙C): <span id="temperatureValueCelsius"></span> ˙C
+                    </div>
+                    <div id="velocityDisplay">
+                        Average Velocity of Particles: <span id="velocityValue"></span> m/s
+                    </div>
+                    <div id="pressureDisplay">
+                        Pressure (Calculated using IDEAL gas law): <span id="pressureValue"></span> kPa
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -13,10 +13,8 @@ document.getElementById('gasDropdown').addEventListener('change', function() {
 
 var T = tSlider.value
 
-/* Velocity variable is declared here, follows the formula for the velocity of an ideal gas particle: 
-sqrt(RT/MM).*/
 
-let velocity = Math.sqrt(8.314 * T / MM)
+let velocity = Math.sqrt(1.5*8.314/50*T/0.5/MM)
 
 // Declare class for Ball - Classes act as a sort of "blueprint"
 class Ball {
@@ -86,7 +84,7 @@ function setup() {
 }
 
 function draw() {
-    velocity = Math.sqrt(8.314 * T / MM)
+    velocity = Math.sqrt(1.5*8.314/50*T/0.5/MM)
     T = tSlider.value
 
     background(0);
